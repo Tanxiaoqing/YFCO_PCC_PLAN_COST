@@ -1,0 +1,93 @@
+class ZCL_FCO_COSTING_UTILS definition
+  public
+  final
+  create public .
+
+public section.
+  methods CONVERT_2_BASEQTY_FOR_ACTYTYPE
+    importing
+      !IV_SOURCE_UNIT type RVUNIT
+      !IV_SOURCE_QUANTITY type VQUAN1_12
+      !IV_TARGET_UNIT type RVUNIT
+    exporting
+      !EV_TARGET_QUANTITY type VQUAN1_12 .
+  methods CONVERT_2_BASEQTY_FOR_MATERIAL
+    importing
+      !IV_MATERIAL type MATNR
+      !IV_PLANT type WERKS_D
+      !IV_SOURCE_UNIT type RVUNIT
+      !IV_SOURCE_QUANTITY type VQUAN1_12
+      !IV_TARGET_UNIT type RVUNIT
+    exporting
+      !EV_TARGET_QUANTITY type VQUAN1_12
+    raising
+      CX_FCO_PCC_EXCEPTION .
+  methods CONVERT_2_BASEQTY_FOR_CSTELMNT
+    importing
+      !IV_OBJECT_NUMBER type J_OBJNR
+      !IV_PARTNER_OBJECT type PAROB
+      !IV_CONTROLLING_AREA type KOKRS
+      !IV_FISCAL_YEAR type GJAHR
+      !IV_COST_ELEMENT type KSTAR
+      !IV_ORIGIN_GROUP type HRKFT
+      !IV_SOURCE_UNIT type RVUNIT
+      !IV_SOURCE_QUANTITY type VQUAN1_12
+    exporting
+      !EV_TARGET_QUANTITY type VQUAN1_12
+      !EV_TARGET_UNIT type RVUNIT
+    raising
+      CX_FCO_PCC_EXCEPTION .
+  methods CONVERT_DATE_TO_PERIOD
+    importing
+      !IV_DATE type DATUM
+      !IV_CONTROLLING_AREA type KOKRS
+    exporting
+      !EV_FISCAL_YEAR type GJAHR
+      !EV_FISCAL_PERIOD type POPER
+    raising
+      CX_FCO_PCC_EXCEPTION .
+  methods GET_FIRST_DATE_IN_PERIOD
+    importing
+      !IV_FISCAL_YEAR_VARIANT type PERIV
+      !IV_FISCAL_YEAR type GJAHR
+      !IV_FISCAL_PERIOD type POPER
+    exporting
+      !EV_DATE type DATUM
+    raising
+      CX_FCO_PCC_EXCEPTION .
+  methods GET_LAST_DATE_IN_PERIOD
+    importing
+      !IV_FISCAL_YEAR type GJAHR
+      !IV_FISCAL_YEAR_VARIANT type PERIV
+      !IV_FISCAL_PERIOD type POPER
+    exporting
+      !EV_DATE type DATUM
+    raising
+      CX_FCO_PCC_EXCEPTION .
+protected section.
+private section.
+ENDCLASS.
+
+
+
+CLASS ZCL_FCO_COSTING_UTILS IMPLEMENTATION.
+ METHOD CONVERT_2_BASEQTY_FOR_ACTYTYPE.
+
+ ENDMETHOD.
+
+ METHOD CONVERT_2_BASEQTY_FOR_MATERIAL.
+ ENDMETHOD.
+
+ METHOD CONVERT_2_BASEQTY_FOR_CSTELMNT.
+ ENDMETHOD.
+
+ METHOD CONVERT_DATE_TO_PERIOD.
+
+ ENDMETHOD.
+
+ METHOD GET_FIRST_DATE_IN_PERIOD.
+ ENDMETHOD .
+
+ METHOD GET_LAST_DATE_IN_PERIOD.
+ ENDMETHOD.
+ENDCLASS.
